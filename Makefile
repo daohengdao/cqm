@@ -37,11 +37,11 @@ rgbk: $(RELEASE_TARGET_GBK)
 gbk_calendar.o: calendar.h calendar.c define.h
 	$(CC) $(RCFALGS) -fexec-charset=GBK -o gbk_calendar.o -c src/calendar.c -I$(INCLUDE_DIR)
 gbk_qimen.o: qimen.h qimen.c define.h data.c data.h calendar.c calendar.h
-	$(CC) $(RCFALGS) -o gbk_qimen.o -c src/qimen.c -I$(INCLUDE_DIR)
+	$(CC) $(RCFALGS) -fexec-charset=GBK -o gbk_qimen.o -c src/qimen.c -I$(INCLUDE_DIR)
 gbk_data.o: data.h data.c define.h
 	$(CC) $(RCFALGS) -fexec-charset=GBK -o gbk_data.o -c src/data.c -I$(INCLUDE_DIR)
 gbk_comline.o: calendar.c calendar.h comline.h comline.c
-	$(CC) $(RCFALGS) -o gbk_comline.o -c src/comline.c -I$(INCLUDE_DIR)
+	$(CC) $(RCFALGS) -fexec-charset=GBK -o gbk_comline.o -c src/comline.c -I$(INCLUDE_DIR)
 
 # UTF8 环境下的 debug 版本
 debug: $(DEBUG_TARGET_UTF8)

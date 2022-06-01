@@ -376,9 +376,9 @@ void BaseInfomation(const char* pErrorInfo)
 // 日期不合法打印通知
 void InlegalTime()
 {
-    char szTem[STR_LEN_64];
+    char szTem[STR_LEN_128];
     memset(szTem, 0x0, sizeof(szTem));
-    sprintf(szTem, "时间范围不合法或者日期格式不正确。\n\n", CQM_VERSION);
+    sprintf(szTem, "时间范围不合法或者日期格式不正确。\n\n");
     BaseInfomation(szTem);
 }
 
@@ -386,11 +386,11 @@ void InlegalTime()
 // 其他失败，命令行格式: xx 0 0 或者 xx 1995-4-1-4-5-34 9
 int  ParseCommand(int nArgc, char** pArgv, calSolar* pSolar, int* pnJushu, int* pbIsAutoTime)
 {
-    char szTem[STR_LEN_64];
+    char szTem[STR_LEN_128];
     memset(szTem, 0x0, sizeof(szTem));
     if (nArgc == 1)
     {
-        sprintf(szTem, "时家奇门本地离线起盘工具          https://gitee/taynpg/cqm\n\n", CQM_VERSION);
+        sprintf(szTem, "时家奇门本地离线起盘工具      https://gitee.com/taynpg/cqm\n\n");
         BaseInfomation(szTem);
         return -1;
     }
